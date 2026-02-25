@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Semua foto di public
 const fotos = [
@@ -17,16 +17,38 @@ const fotos = [
 
 const videos = [
   { id: 1, youtubeId: 'imgc0p2mubc', alt: 'Video aktivitas', caption: 'Video aktivitas PPA Assa\'adah' },
-  { id: 2, youtubeId: 'imgc0p2mubc', alt: 'Video kegiatan', caption: 'Video kegiatan (dummy)' },
-  { id: 3, youtubeId: 'imgc0p2mubc', alt: 'Video dokumentasi', caption: 'Video dokumentasi (dummy)' },
+  { id: 2, youtubeId: 'FYnZIGrChV8', alt: 'Video dokumentasi', caption: 'Video dokumentasi PPA Assa\'adah' },
+  { id: 3, youtubeId: '3CY-iqHguFI', alt: 'Video kegiatan', caption: 'Video kegiatan PPA Assa\'adah' },
 ];
 
 export default function Galeri() {
   const [lightboxFoto, setLightboxFoto] = useState<number | null>(null);
   const [lightboxVideo, setLightboxVideo] = useState<number | null>(null);
+  const [videoTitles, setVideoTitles] = useState<Record<string, string>>({});
 
   const activeFoto = fotos.find((f) => f.id === lightboxFoto);
   const activeVideo = videos.find((v) => v.id === lightboxVideo);
+
+  useEffect(() => {
+    const fetchTitles = async () => {
+      const next: Record<string, string> = {};
+      await Promise.all(
+        videos.map(async (v) => {
+          try {
+            const res = await fetch(
+              `https://noembed.com/embed?url=https://www.youtube.com/watch?v=${v.youtubeId}`
+            );
+            const data = await res.json();
+            if (data.title) next[v.youtubeId] = data.title;
+          } catch {
+            // keep fallback caption
+          }
+        })
+      );
+      setVideoTitles((prev) => ({ ...prev, ...next }));
+    };
+    fetchTitles();
+  }, []);
 
   return (
     <section id="galeri" className="relative py-24 lg:py-32 overflow-hidden">
@@ -96,7 +118,9 @@ export default function Galeri() {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-white font-medium text-sm">{item.caption}</p>
+                  <p className="text-white font-medium text-sm line-clamp-2">
+                    {videoTitles[item.youtubeId] || item.caption}
+                  </p>
                   <span className="text-emerald-300 text-xs flex items-center gap-1 mt-1">
                     <i className="ri-youtube-line" /> Klik untuk menonton
                   </span>
@@ -145,7 +169,7 @@ export default function Galeri() {
               <div className="relative aspect-video w-full rounded-xl overflow-hidden">
                 <iframe
                   src={`https://www.youtube.com/embed/${activeVideo.youtubeId}?autoplay=1`}
-                  title={activeVideo.caption}
+                  title={videoTitles[activeVideo.youtubeId] || activeVideo.caption}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="absolute inset-0 w-full h-full"
