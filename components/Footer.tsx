@@ -26,11 +26,16 @@ export default function Footer() {
               Mencetak generasi penghafal Al-Qur&apos;an yang berakhlak mulia dan bermanfaat bagi umat.
             </p>
             <div className="flex gap-3">
-              {['ri-facebook-fill', 'ri-instagram-line', 'ri-youtube-fill', 'ri-whatsapp-line'].map((icon, i) => (
+              {[
+                { icon: 'ri-facebook-fill', hover: 'hover:bg-emerald-500/20 hover:text-emerald-400' },
+                { icon: 'ri-instagram-line', hover: 'hover:bg-amber-500/20 hover:text-amber-400' },
+                { icon: 'ri-youtube-fill', hover: 'hover:bg-rose-500/20 hover:text-rose-400' },
+                { icon: 'ri-whatsapp-line', hover: 'hover:bg-emerald-500/20 hover:text-emerald-400' },
+              ].map(({ icon, hover }, i) => (
                 <a
                   key={i}
                   href="#"
-                  className="w-12 h-12 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-emerald-400 transition-all duration-300"
+                  className={`w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 transition-all duration-300 ${hover}`}
                 >
                   <i className={`${icon} text-xl`} />
                 </a>

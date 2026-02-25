@@ -46,13 +46,22 @@ export default function Programs() {
     },
   ];
 
+  const facilityColors = [
+    { bg: 'bg-emerald-500/10', bgHover: 'group-hover:bg-emerald-500/20', icon: 'text-emerald-600', border: 'hover:border-emerald-200/80', shadow: 'hover:shadow-emerald-100/30' },
+    { bg: 'bg-amber-500/10', bgHover: 'group-hover:bg-amber-500/20', icon: 'text-amber-600', border: 'hover:border-amber-200/80', shadow: 'hover:shadow-amber-100/30' },
+    { bg: 'bg-blue-500/10', bgHover: 'group-hover:bg-blue-500/20', icon: 'text-blue-600', border: 'hover:border-blue-200/80', shadow: 'hover:shadow-blue-100/30' },
+    { bg: 'bg-violet-500/10', bgHover: 'group-hover:bg-violet-500/20', icon: 'text-violet-600', border: 'hover:border-violet-200/80', shadow: 'hover:shadow-violet-100/30' },
+    { bg: 'bg-rose-500/10', bgHover: 'group-hover:bg-rose-500/20', icon: 'text-rose-600', border: 'hover:border-rose-200/80', shadow: 'hover:shadow-rose-100/30' },
+    { bg: 'bg-teal-500/10', bgHover: 'group-hover:bg-teal-500/20', icon: 'text-teal-600', border: 'hover:border-teal-200/80', shadow: 'hover:shadow-teal-100/30' },
+  ];
+
   const facilities = [
-    { icon: 'ri-home-4-line', name: 'Asrama Nyaman', desc: 'Kamar ber-AC' },
-    { icon: 'ri-restaurant-line', name: 'Dapur & Makan', desc: 'Makanan bergizi 3x sehari' },
+    { icon: 'ri-home-4-line', name: 'Asrama Nyaman', desc: 'Kamar bersih & lingkungan kondusif' },
+    { icon: 'ri-restaurant-line', name: 'Dapur & Makan', desc: 'Makanan sehat 3x sehari' },
     { icon: 'ri-book-line', name: 'Perpustakaan', desc: 'Kitab dan buku islami' },
-    { icon: 'ri-hospital-line', name: 'Klinik', desc: 'Pelayanan 24 jam' },
-    { icon: 'ri-football-line', name: 'Lapangan Olahraga', desc: 'Futsal, basket, badminton' },
-    { icon: 'ri-wifi-line', name: 'Internet', desc: 'WiFi untuk pembelajaran' },
+    { icon: 'ri-hospital-line', name: 'Akses Medis Mudah', desc: 'Dekat klinik & layanan medis' },
+    { icon: 'ri-football-line', name: 'Olahraga', desc: 'Futsal dan badminton' },
+    { icon: 'ri-medal-line', name: 'Ekstrakulikuler', desc: 'Aktif, kreatif & produktif' },
   ];
 
   return (
@@ -62,6 +71,7 @@ export default function Programs() {
         <div className="absolute inset-0 bg-white" />
         <div className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full opacity-20 blur-3xl bg-emerald-200/50 -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full opacity-15 blur-3xl bg-teal-200/50 translate-y-1/2 -translate-x-1/2" />
+        <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] rounded-full opacity-10 blur-3xl bg-amber-200/60 -translate-x-1/2 -translate-y-1/2" />
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 lg:mb-24">
@@ -139,12 +149,15 @@ export default function Programs() {
                     <h3 className="font-display text-2xl lg:text-3xl font-bold text-zinc-900 mb-4">{p.title}</h3>
                     <p className="text-zinc-600 leading-relaxed mb-6">{p.description}</p>
                     <ul className="space-y-3">
-                      {p.features.map((f, j) => (
-                        <li key={j} className="flex items-center gap-3 text-zinc-700">
-                          <i className="ri-check-line text-emerald-500 flex-shrink-0 text-lg" />
-                          {f}
-                        </li>
-                      ))}
+                      {p.features.map((f, j) => {
+                        const checkColors = ['text-emerald-500', 'text-teal-500', 'text-emerald-600', 'text-teal-600'];
+                        return (
+                          <li key={j} className="flex items-center gap-3 text-zinc-700">
+                            <i className={`ri-check-line ${checkColors[j % checkColors.length]} flex-shrink-0 text-lg`} />
+                            {f}
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </div>
@@ -171,23 +184,26 @@ export default function Programs() {
               </h3>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-              {facilities.map((f, i) => (
-                <div
-                  key={i}
-                  className={`group flex items-center gap-5 p-6 lg:p-8 rounded-2xl bg-white/80 border border-zinc-200/80 hover:border-emerald-200/80 hover:shadow-xl hover:shadow-emerald-100/30 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] ${
-                    facilitiesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                  }`}
-                  style={{ transitionDelay: facilitiesVisible ? `${i * 80}ms` : '0ms' }}
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500/20 group-hover:scale-110 transition-all duration-300">
-                    <i className={`${f.icon} text-emerald-600 text-2xl`} />
+              {facilities.map((f, i) => {
+                const c = facilityColors[i % facilityColors.length];
+                return (
+                  <div
+                    key={i}
+                    className={`group flex items-center gap-5 p-6 lg:p-8 rounded-2xl bg-white/80 border border-zinc-200/80 ${c.border} hover:shadow-xl ${c.shadow} transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] ${
+                      facilitiesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                    }`}
+                    style={{ transitionDelay: facilitiesVisible ? `${i * 80}ms` : '0ms' }}
+                  >
+                    <div className={`w-14 h-14 rounded-2xl ${c.bg} flex items-center justify-center flex-shrink-0 ${c.bgHover} group-hover:scale-110 transition-all duration-300`}>
+                      <i className={`${f.icon} ${c.icon} text-2xl`} />
+                    </div>
+                    <div>
+                      <h4 className="font-display font-bold text-zinc-900 text-lg">{f.name}</h4>
+                      <p className="text-zinc-600 text-sm mt-0.5">{f.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-display font-bold text-zinc-900 text-lg">{f.name}</h4>
-                    <p className="text-zinc-600 text-sm mt-0.5">{f.desc}</p>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 

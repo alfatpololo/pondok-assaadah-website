@@ -7,7 +7,7 @@ export type BeritaItem = {
   date: string;
   image: string;
   category: string;
-  imagePosition?: 'center' | 'bottom';
+  imagePosition?: 'center' | 'bottom' | 'top';
 };
 
 export const beritaData: BeritaItem[] = [
@@ -23,15 +23,15 @@ export const beritaData: BeritaItem[] = [
   },
   {
     id: 2,
-    slug: 'pembelajaran-teknisi-komputer',
-    title: 'Pembelajaran Teknisi Komputer Siswa Pondok PPA Assaadah',
-    excerpt: 'Pelaksanaan pembelajaran teknisi komputer untuk melatih warga dan santri dengan keterampilan yang bermanfaat.',
-    content: `Kegiatan ini bertujuan untuk memberikan pemahaman dasar hingga praktik langsung terkait perakitan, perawatan, dan troubleshooting perangkat komputer. Para santri dibimbing untuk mengenal komponen hardware, instalasi sistem operasi, serta dasar-dasar jaringan komputer.
+    slug: 'gathering-ppa-assaadah',
+    title: 'Gathering Keluarga Besar PPA Assa\'adah',
+    excerpt: 'Acara gathering bersama warga, santri, dan pengurus untuk mempererat silaturahmi dan kebersamaan di lingkungan pondok.',
+    content: `Gathering keluarga besar PPA Baitul Qur'an As-Sa'adah digelar untuk mempererat silaturahmi antara pengurus, santri, ustadz/ustadzah, wali santri, dan warga sekitar. Acara ini menjadi momen berkumpul yang penuh barakah di tengah kesibukan kegiatan tahfidz dan pendidikan.
 
-Program ini menjadi bagian dari upaya PPA dalam mengintegrasikan pendidikan tahfidz Al-Qur'an dengan penguatan kompetensi teknologi, sehingga para santri tidak hanya unggul dalam hafalan, tetapi juga memiliki keahlian teknis yang relevan dengan kebutuhan era digital.`,
-    date: '10 Des 2024',
-    image: '/pemberdayaan.jpg',
-    category: 'Pelatihan',
+Selain silaturahmi, gathering juga dimanfaatkan untuk berbagi informasi perkembangan pondok, program-program ke depan, serta apresiasi kepada semua pihak yang mendukung perjalanan PPA Assa'adah. Semoga dengan acara seperti ini, ikatan kekeluargaan dan semangat bersama dalam mendukung generasi penghafal Al-Qur'an semakin kuat.`,
+    date: '24 Feb 2026',
+    image: '/WhatsApp Image 2026-02-24 at 13.14.08.jpeg',
+    category: 'Acara',
     imagePosition: 'bottom',
   },
   {

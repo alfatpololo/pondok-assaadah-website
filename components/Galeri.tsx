@@ -31,6 +31,7 @@ export default function Galeri() {
     <section id="galeri" className="relative py-24 lg:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-white" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full opacity-20 blur-3xl bg-emerald-200/50 translate-y-1/2 translate-x-1/2" />
+      <div className="absolute top-0 left-1/2 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl bg-violet-200/50 -translate-y-1/2 -translate-x-1/2" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">

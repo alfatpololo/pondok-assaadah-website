@@ -80,11 +80,18 @@ export default function Donation() {
                   PPA Assa&apos;adah mengandalkan zakat, infaq, dan sedekah. Seluruh biaya santri dan ujroh assatidz (Rp30–35 juta/bulan) ditanggung Yayasan.
                 </p>
                 <div className="space-y-5">
-                  {usageBreakdown.map((item, i) => (
+                  {usageBreakdown.map((item, i) => {
+                    const percentColors: Record<string, string> = {
+                      'bg-emerald-500': 'text-emerald-600',
+                      'bg-blue-500': 'text-blue-600',
+                      'bg-amber-500': 'text-amber-600',
+                      'bg-violet-500': 'text-violet-600',
+                    };
+                    return (
                     <div key={i}>
                       <div className="flex justify-between mb-2">
                         <span className="font-medium text-zinc-800">{item.category}</span>
-                        <span className="font-bold text-emerald-600">{item.percentage}%</span>
+                        <span className={`font-bold ${percentColors[item.colorClass] ?? 'text-emerald-600'}`}>{item.percentage}%</span>
                       </div>
                       <div className="h-3 bg-zinc-200 rounded-full overflow-hidden">
                         <div
@@ -93,7 +100,8 @@ export default function Donation() {
                         />
                       </div>
                     </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </div>

@@ -9,6 +9,7 @@ export default function Berita() {
       <div className="absolute inset-0 bg-[#f8fafc]" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full opacity-20 blur-3xl bg-emerald-200/50 -translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] rounded-full opacity-15 blur-3xl bg-amber-200/50 translate-y-1/2 translate-x-1/2" />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
@@ -24,7 +25,15 @@ export default function Berita() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {beritaData.map((item) => (
+          {beritaData.map((item, idx) => {
+            const tagStyles = [
+              'bg-emerald-500/10 text-emerald-700',
+              'bg-amber-500/10 text-amber-700',
+              'bg-blue-500/10 text-blue-700',
+              'bg-violet-500/10 text-violet-700',
+            ];
+            const tagStyle = tagStyles[idx % tagStyles.length];
+            return (
             <article
               key={item.id}
               className="group rounded-2xl bg-white border border-zinc-200/80 shadow-sm hover:shadow-xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
@@ -34,12 +43,12 @@ export default function Berita() {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${item.imagePosition === 'bottom' ? 'object-bottom' : 'object-center'}`}
+                    className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ${item.imagePosition === 'bottom' ? 'object-bottom' : item.imagePosition === 'top' ? 'object-top' : 'object-center'}`}
                   />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-700 text-xs font-semibold">
+                    <span className={`px-2.5 py-1 rounded-lg ${tagStyle} text-xs font-semibold`}>
                       {item.category}
                     </span>
                     <span className="text-zinc-400 text-sm">{item.date}</span>
@@ -55,7 +64,8 @@ export default function Berita() {
                 </div>
               </Link>
             </article>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

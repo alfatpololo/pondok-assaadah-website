@@ -5,13 +5,19 @@ import Link from 'next/link';
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Gradient mesh background - unicorn style */}
+      {/* Foto background + gradient overlay */}
       <div className="absolute inset-0 z-0">
         <div
-          className="absolute inset-0 opacity-90"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/B7DmmyjCIAEjmxh.jpg)',
+          }}
+        />
+        <div
+          className="absolute inset-0 opacity-65"
           style={{
             background:
-              'linear-gradient(135deg, #064e3b 0%, #065f46 25%, #0a0a0b 50%, #0f172a 75%, #064e3b 100%)',
+              'linear-gradient(95deg, #064e3b 0%, #065f46 25%, #0a0a0b 50%, #0f172a 75%, #064e3b 100%)',
           }}
         />
         <div
@@ -22,26 +28,16 @@ export default function Hero() {
               radial-gradient(ellipse 50% 30% at 0% 50%, rgba(16, 185, 129, 0.2), transparent)`,
           }}
         />
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=1920&q=80')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 60%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 60%)',
-          }}
-        />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#0a0a0b_1px,transparent_1px),linear-gradient(to_bottom,#0a0a0b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-30" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 py-32">
         <div className="max-w-3xl">
           <div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-emerald-300/90 text-sm font-medium mb-8 backdrop-blur-sm animate-fade-in"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-400/50 text-amber-200 text-sm font-medium mb-8 backdrop-blur-sm animate-fade-in"
             style={{ animationDelay: '0.1s' }}
           >
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-amber-200 animate-pulse" />
             PPA Baitul Qur&apos;an As-Sa&apos;adah Mutiara Sentul
           </div>
 
@@ -56,7 +52,7 @@ export default function Hero() {
           </h1>
 
           <p
-            className="text-lg sm:text-xl text-zinc-400 leading-relaxed mb-10 max-w-2xl animate-fade-in"
+            className="text-lg sm:text-xl text-white leading-relaxed mb-10 max-w-2xl animate-fade-in"
             style={{ animationDelay: '0.4s', animationFillMode: 'both' }}
           >
             Metode terbukti efektif, pengajar berpengalaman, dan fasilitas memadai untuk mendampingi santri menghafal Al-Qur&apos;an dengan tartil.
@@ -75,7 +71,7 @@ export default function Hero() {
             </Link>
             <Link
               href="#about"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white/90 hover:text-white border border-white/20 hover:bg-white/5 transition-all duration-300 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-amber-200/95 hover:text-amber-100 border border-amber-400/40 hover:bg-amber-500/10 transition-all duration-300 backdrop-blur-sm"
             >
               Pelajari Lebih Lanjut
             </Link>
@@ -84,7 +80,7 @@ export default function Hero() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-float">
-        <Link href="#about" className="flex flex-col items-center gap-2 text-white/60 hover:text-white transition-colors">
+        <Link href="#about" className="flex flex-col items-center gap-2 text-amber-200 hover:text-amber-100 transition-colors">
           <span className="text-xs font-medium uppercase tracking-widest">Scroll</span>
           <i className="ri-arrow-down-s-line text-2xl" />
         </Link>

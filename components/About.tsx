@@ -4,6 +4,12 @@ import StatsCounter from './StatsCounter';
 import SejarahSlider from './SejarahSlider';
 
 export default function About() {
+  const valueAccents = [
+    { gradient: 'from-emerald-500 to-emerald-600', border: 'hover:border-emerald-200', shadow: 'hover:shadow-emerald-100/50' },
+    { gradient: 'from-amber-500 to-amber-600', border: 'hover:border-amber-200', shadow: 'hover:shadow-amber-100/50' },
+    { gradient: 'from-blue-500 to-blue-600', border: 'hover:border-blue-200', shadow: 'hover:shadow-blue-100/50' },
+    { gradient: 'from-violet-500 to-violet-600', border: 'hover:border-violet-200', shadow: 'hover:shadow-violet-100/50' },
+  ];
   const values = [
     { icon: 'ri-star-line', title: 'Tauhid', desc: 'Mengesakan Allah dalam setiap aspek kehidupan' },
     { icon: 'ri-heart-line', title: 'Akhlak', desc: 'Berakhlak mulia seperti Rasulullah SAW' },
@@ -115,18 +121,21 @@ export default function About() {
               </h3>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {values.map((item, i) => (
-                <div
-                  key={i}
-                  className="group relative rounded-2xl p-8 bg-white border-2 border-zinc-100 hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-100/50 transition-all duration-300 hover:-translate-y-2"
-                >
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <i className={`${item.icon} text-white text-2xl`} />
+              {values.map((item, i) => {
+                const accent = valueAccents[i % valueAccents.length];
+                return (
+                  <div
+                    key={i}
+                    className={`group relative rounded-2xl p-8 bg-white border-2 border-zinc-100 ${accent.border} hover:shadow-xl ${accent.shadow} transition-all duration-300 hover:-translate-y-2`}
+                  >
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${accent.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                      <i className={`${item.icon} text-white text-2xl`} />
+                    </div>
+                    <h4 className="font-display text-xl font-bold text-zinc-900 mb-3">{item.title}</h4>
+                    <p className="text-zinc-600 leading-relaxed">{item.desc}</p>
                   </div>
-                  <h4 className="font-display text-xl font-bold text-zinc-900 mb-3">{item.title}</h4>
-                  <p className="text-zinc-600 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

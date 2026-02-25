@@ -54,6 +54,12 @@ export default function StatsCounter() {
     };
   }, [animateCounters]);
 
+  const statAccents = [
+    { bg: 'bg-emerald-500/10', bgHover: 'group-hover:bg-emerald-500/20', icon: 'text-emerald-600', shadow: 'hover:shadow-emerald-100/30', border: 'hover:border-emerald-200/80' },
+    { bg: 'bg-amber-500/10', bgHover: 'group-hover:bg-amber-500/20', icon: 'text-amber-600', shadow: 'hover:shadow-amber-100/30', border: 'hover:border-amber-200/80' },
+    { bg: 'bg-blue-500/10', bgHover: 'group-hover:bg-blue-500/20', icon: 'text-blue-600', shadow: 'hover:shadow-blue-100/30', border: 'hover:border-blue-200/80' },
+    { bg: 'bg-violet-500/10', bgHover: 'group-hover:bg-violet-500/20', icon: 'text-violet-600', shadow: 'hover:shadow-violet-100/30', border: 'hover:border-violet-200/80' },
+  ];
   const stats = [
     { value: counts.students, suffix: '+', label: 'Santri Aktif', icon: 'ri-group-line' },
     { value: counts.alumni, suffix: '+', label: 'Alumni', icon: 'ri-graduation-cap-line' },
@@ -64,13 +70,15 @@ export default function StatsCounter() {
   return (
     <div ref={sectionRef} className="mt-24 lg:mt-32">
       <div className="flex flex-col sm:flex-row sm:items-stretch gap-6 lg:gap-8">
-        {stats.map((stat, i) => (
+        {stats.map((stat, i) => {
+          const accent = statAccents[i % statAccents.length];
+          return (
           <div
             key={i}
-            className="group flex-1 flex items-center gap-6 p-8 lg:p-10 rounded-2xl bg-white border border-zinc-200/80 shadow-xl shadow-zinc-200/30 hover:shadow-2xl hover:shadow-emerald-100/30 hover:border-emerald-200/80 transition-all duration-300 hover:-translate-y-1"
+            className={`group flex-1 flex items-center gap-6 p-8 lg:p-10 rounded-2xl bg-white border border-zinc-200/80 shadow-xl shadow-zinc-200/30 hover:shadow-2xl ${accent.shadow} ${accent.border} transition-all duration-300 hover:-translate-y-1`}
           >
-            <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-500/20 transition-colors">
-              <i className={`${stat.icon} text-emerald-600 text-2xl`} />
+            <div className={`w-16 h-16 rounded-2xl ${accent.bg} flex items-center justify-center flex-shrink-0 ${accent.bgHover} transition-colors`}>
+              <i className={`${stat.icon} ${accent.icon} text-2xl`} />
             </div>
             <div>
               <div className="font-display text-4xl lg:text-5xl font-bold text-zinc-900 tracking-tight mb-0.5">
@@ -80,7 +88,8 @@ export default function StatsCounter() {
               <div className="text-zinc-600 font-medium">{stat.label}</div>
             </div>
           </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

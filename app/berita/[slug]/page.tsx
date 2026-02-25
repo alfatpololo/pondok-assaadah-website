@@ -76,7 +76,7 @@ export default async function BeritaDetailPage({ params }: { params: Promise<{ s
             <img
               src={berita.image}
               alt={berita.title}
-              className={`w-full h-full object-cover ${berita.imagePosition === 'bottom' ? 'object-bottom' : 'object-center'}`}
+              className={`w-full h-full object-cover ${berita.imagePosition === 'bottom' ? 'object-bottom' : berita.imagePosition === 'top' ? 'object-top' : 'object-center'}`}
             />
           </div>
 

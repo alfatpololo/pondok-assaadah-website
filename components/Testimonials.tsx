@@ -117,10 +117,12 @@ export default function Testimonials() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {testimonials.map((t, i) => (
+            {testimonials.map((t, i) => {
+              const cardHover = ['hover:border-emerald-200/60', 'hover:border-amber-200/60', 'hover:border-blue-200/60', 'hover:border-violet-200/60'][i % 4];
+              return (
               <div
                 key={i}
-                className={`group relative rounded-2xl p-8 bg-white border border-zinc-200/80 shadow-lg hover:shadow-xl hover:border-emerald-200/60 transition-all duration-300 ${
+                className={`group relative rounded-2xl p-8 bg-white border border-zinc-200/80 shadow-lg hover:shadow-xl ${cardHover} transition-all duration-300 ${
                   i === 0 ? 'lg:mt-8' : i === 2 ? 'lg:mt-16' : i === 3 ? 'lg:mt-8' : ''
                 }`}
               >
@@ -138,7 +140,8 @@ export default function Testimonials() {
                   </div>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
