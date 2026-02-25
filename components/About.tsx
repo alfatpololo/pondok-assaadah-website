@@ -63,7 +63,7 @@ export default function About() {
             <div className="order-1 lg:order-2">
               <span className="text-emerald-600 font-bold text-xs uppercase tracking-[0.25em]">Sejarah</span>
               <h3 className="font-display text-3xl lg:text-4xl xl:text-5xl font-bold text-zinc-900 mt-4 mb-8 leading-[1.15]">
-                Dari 3 santri menjadi lembaga yang dipercaya ribuan keluarga
+                Dari 3 santri menjadi lembaga yang dipercaya.
               </h3>
               <div className="space-y-6 text-lg text-zinc-600 leading-relaxed">
                 <p>
