@@ -38,6 +38,12 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between">
           <Link href="#" className="flex-shrink-0 group flex items-center gap-3">
+            <img
+              src="/assaadah logo.png"
+              alt=""
+              className={`h-11 lg:h-12 w-auto object-contain transition-all duration-300 ${!isScrolled ? 'brightness-0 invert' : ''}`}
+              aria-hidden
+            />
             <span className="font-display font-bold text-xl tracking-tight group-hover:tracking-normal transition-all duration-300">
               {isScrolled ? (
                 <span className="bg-gradient-to-r from-emerald-600 to-emerald-800 bg-clip-text text-transparent">

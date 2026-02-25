@@ -21,6 +21,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "PPA Baitul Qur'an As-Sa'adah | Mutiara Sentul Cibinong",
   description: "Pondok Penghafal Al-Qur'an di Perum Mutiara Sentul, Cibinong Bogor. Mencetak generasi penghafal Qur'an yang berakhlak mulia.",
+  icons: {
+    icon: "/assaadah logo.png",
+    apple: "/assaadah logo.png",
+  },
 };
 
 export default function RootLayout({

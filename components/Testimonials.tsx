@@ -14,24 +14,24 @@ export default function Testimonials() {
   ];
 
   const pembina = [
-    { name: 'Deden Rahmawan', position: 'Ketua Pembina', image: 'https://ui-avatars.com/api/?name=Deden+Rahmawan&size=360&background=059669&color=fff' },
-    { name: 'Amke Wijatman', position: 'Anggota Pembina', image: 'https://ui-avatars.com/api/?name=Amke+Wijatman&size=360&background=059669&color=fff' },
-    { name: 'H.A. Taufik Suwanta', position: 'Anggota Pembina', image: 'https://ui-avatars.com/api/?name=HA+Taufik&size=360&background=059669&color=fff' },
+    { name: 'Deden Rahmawan', position: 'Ketua Pembina', image: '/Deden.jpg' },
+    { name: 'Amke Wijatman', position: 'Anggota Pembina', image: '/Amke Wijatman.jpg' },
+    { name: 'H.A. Taufik Suwanta', position: 'Anggota Pembina', image: '/taufik suwanta.jpeg' },
   ];
 
   const pengurus = [
-    { name: 'Muhammad Hilmi Firdausi', position: 'Ketua', image: 'https://ui-avatars.com/api/?name=Muhammad+Hilmi&size=360&background=059669&color=fff' },
-    { name: 'Zulfikar', position: 'Sekretaris', image: 'https://ui-avatars.com/api/?name=Zulfikar&size=360&background=059669&color=fff' },
+    { name: 'Muhammad Hilmi Firdausi', position: 'Ketua', image: '/Hilmi.jpg' },
+    { name: 'Zulfikar', position: 'Sekretaris', image: '/zulfikar.jpeg' },
     { name: 'Abdul Latif Ahmad', position: 'Wakil Sekretaris / Mudir PPA', image: 'https://ui-avatars.com/api/?name=Abdul+Latif&size=360&background=059669&color=fff' },
-    { name: 'Solihin', position: 'Bendahara', image: 'https://ui-avatars.com/api/?name=Solihin&size=360&background=059669&color=fff' },
+    { name: 'Solihin', position: 'Bendahara', image: '/solihin.jpeg', imagePosition: '50% 35%' },
     { name: 'Lili Abidin', position: 'Wakil Bendahara I', image: 'https://ui-avatars.com/api/?name=Lili+Abidin&size=360&background=059669&color=fff' },
     { name: 'Eti Handayani', position: 'Wakil Bendahara II', image: 'https://ui-avatars.com/api/?name=Eti+Handayani&size=360&background=059669&color=fff' },
   ];
 
   const pengawas = [
-    { name: 'Nugraha', position: 'Ketua Pengawas', image: 'https://ui-avatars.com/api/?name=Nugraha&size=360&background=059669&color=fff' },
-    { name: 'Sahurdi', position: 'Anggota Pengawas', image: 'https://ui-avatars.com/api/?name=Sahurdi&size=360&background=059669&color=fff' },
-    { name: 'Amiruddin', position: 'Anggota Pengawas', image: 'https://ui-avatars.com/api/?name=Amiruddin&size=360&background=059669&color=fff' },
+    { name: 'Nugraha', position: 'Ketua Pengawas', image: '/nugraha.jpeg' },
+    { name: 'Sahurdi', position: 'Anggota Pengawas', image: '/sahurdi.jpeg' },
+    { name: 'Amiruddin', position: 'Anggota Pengawas', image: '/amir.jpeg', imagePosition: '15% 50%' },
   ];
 
   const getRoleIcon = (position: string) => {
@@ -66,16 +66,17 @@ export default function Testimonials() {
     },
   };
 
-  const PersonCard = ({ person, size = 'lg' }: { person: { name: string; position: string; image: string }; size?: 'lg' | 'md' | 'sm' }) => {
+  const PersonCard = ({ person, size = 'lg' }: { person: { name: string; position: string; image: string; imagePosition?: string }; size?: 'lg' | 'md' | 'sm' }) => {
     const { icon, bg } = getRoleIcon(person.position);
     const s = sizeStyles[size];
     return (
       <div className={`group flex flex-col items-center ${s.card} bg-white border border-zinc-200/80 shadow-md hover:shadow-xl transition-all duration-300 w-full mx-auto`}>
         <div className={`relative ${s.photo} rounded-full overflow-hidden bg-zinc-100 ring-2 ring-zinc-100 flex-shrink-0`}>
           <img
-            src={person.image}
+            src={person.image.startsWith('/') ? encodeURI(person.image) : person.image}
             alt={person.name}
-            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            style={{ objectPosition: person.imagePosition ?? 'top' }}
             onError={(e) => {
               e.currentTarget.style.display = 'none';
               (e.currentTarget.nextElementSibling as HTMLElement)?.classList.remove('hidden');
@@ -155,7 +156,7 @@ export default function Testimonials() {
               Susunan Pengurus PPA Assa&apos;adah
             </h3>
             <p className="text-zinc-600 mt-4 max-w-2xl mx-auto">
-              Pembina, Pengurus, dan Pengawas adalah warga RW 10 yang secara sukarela meluangkan waktu mengelola Yayasan Assa&apos;adah
+              Pembina, Pengurus, dan Pengawas adalah warga Mutiara Sentul yang secara sukarela meluangkan waktu mengelola Yayasan Assa&apos;adah
             </p>
           </div>
 

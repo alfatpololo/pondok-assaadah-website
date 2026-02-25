@@ -76,31 +76,37 @@ export default function About() {
             </div>
           </div>
 
-          {/* Visi & Misi - side by side cards */}
+          {/* Visi & Misi - kombinasi warna (warm + cool) */}
           <div className="grid md:grid-cols-2 gap-8 mt-32 lg:mt-40">
-            <div className="group relative rounded-3xl p-10 lg:p-12 bg-zinc-50 border border-zinc-100 overflow-hidden hover:border-emerald-200/60 transition-all duration-500">
-              <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-emerald-500/5 -translate-y-1/2 translate-x-1/2 group-hover:bg-emerald-500/10 transition-colors" />
+            {/* Visi - nuansa amber/warm */}
+            <div className="group relative rounded-3xl p-10 lg:p-12 overflow-hidden transition-all duration-500 border border-amber-200/80 hover:border-amber-300 hover:shadow-xl hover:shadow-amber-100/50"
+              style={{ background: 'linear-gradient(145deg, #fffbeb 0%, #fef3c7 40%, #fef9c3 100%)' }}
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-amber-400/10 -translate-y-1/2 translate-x-1/2 group-hover:bg-amber-400/15 transition-colors" />
               <div className="relative">
-                <div className="w-14 h-14 rounded-2xl bg-emerald-500 flex items-center justify-center mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-amber-500 flex items-center justify-center mb-6 shadow-lg shadow-amber-500/25">
                   <i className="ri-eye-line text-white text-2xl" />
                 </div>
-                <h4 className="font-display text-2xl font-bold text-zinc-900 mb-4">Visi</h4>
-                <p className="text-zinc-600 text-lg leading-relaxed">
+                <h4 className="font-display text-2xl font-bold text-amber-900 mb-4">Visi</h4>
+                <p className="text-amber-900/85 text-lg leading-relaxed">
                   Menjadi lembaga tahfidz terdepan yang mencetak generasi Qur&apos;ani yang hafal, faham, dan mengamalkan Al-Qur&apos;an dalam kehidupan sehari-hari.
                 </p>
               </div>
             </div>
-            <div className="group relative rounded-3xl p-10 lg:p-12 bg-zinc-900 border border-zinc-800 overflow-hidden hover:border-emerald-500/30 transition-all duration-500">
-              <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-emerald-500/10 translate-y-1/2 -translate-x-1/2 group-hover:bg-emerald-500/20 transition-colors" />
+            {/* Misi - nuansa biru gelap */}
+            <div className="group relative rounded-3xl p-10 lg:p-12 overflow-hidden transition-all duration-500 border border-blue-700/50 hover:border-blue-500/60 hover:shadow-xl hover:shadow-blue-900/25"
+              style={{ background: 'linear-gradient(160deg, #1e3a5f 0%, #1e40af 40%, #1d4ed8 100%)' }}
+            >
+              <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-blue-400/10 translate-y-1/2 -translate-x-1/2 group-hover:bg-blue-400/15 transition-colors" />
               <div className="relative">
-                <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
-                  <i className="ri-flag-line text-emerald-400 text-2xl" />
+                <div className="w-14 h-14 rounded-2xl bg-blue-400/25 flex items-center justify-center mb-6 border border-blue-400/20">
+                  <i className="ri-flag-line text-blue-200 text-2xl" />
                 </div>
-                <h4 className="font-display text-2xl font-bold text-white mb-6">Misi</h4>
+                <h4 className="font-display text-2xl font-bold text-blue-50 mb-6">Misi</h4>
                 <ul className="space-y-4">
                   {['Menghafal Al-Qur\'an 30 juz dengan tartil', 'Membentuk akhlak mulia sesuai tuntunan Islam', 'Mengembangkan potensi santri secara holistik'].map((item, i) => (
-                    <li key={i} className="flex items-start gap-4 text-zinc-300">
-                      <i className="ri-check-line text-emerald-400 text-xl flex-shrink-0 mt-0.5" />
+                    <li key={i} className="flex items-start gap-4 text-blue-100/90">
+                      <i className="ri-check-line text-blue-300 text-xl flex-shrink-0 mt-0.5" />
                       <span className="text-lg">{item}</span>
                     </li>
                   ))}

@@ -24,9 +24,9 @@ export const beritaData: BeritaItem[] = [
   {
     id: 2,
     slug: 'gathering-ppa-assaadah',
-    title: 'Gathering Keluarga Besar PPA Assa\'adah',
-    excerpt: 'Acara gathering bersama warga, santri, dan pengurus untuk mempererat silaturahmi dan kebersamaan di lingkungan pondok.',
-    content: `Gathering keluarga besar PPA Baitul Qur'an As-Sa'adah digelar untuk mempererat silaturahmi antara pengurus, santri, ustadz/ustadzah, wali santri, dan warga sekitar. Acara ini menjadi momen berkumpul yang penuh barakah di tengah kesibukan kegiatan tahfidz dan pendidikan.
+    title: 'Gathering PPA Assa\'adah',
+    excerpt: 'Acara gathering bersama santri, dan pengurus untuk mempererat silaturahmi dan kebersamaan di lingkungan pondok.',
+    content: `Gathering PPA Baitul Qur'an As-Sa'adah digelar untuk mempererat silaturahmi antara pengurus, santri, ustadz/ustadzah. Acara ini menjadi momen berkumpul yang penuh barakah di tengah kesibukan kegiatan tahfidz dan pendidikan.
 
 Selain silaturahmi, gathering juga dimanfaatkan untuk berbagi informasi perkembangan pondok, program-program ke depan, serta apresiasi kepada semua pihak yang mendukung perjalanan PPA Assa'adah. Semoga dengan acara seperti ini, ikatan kekeluargaan dan semangat bersama dalam mendukung generasi penghafal Al-Qur'an semakin kuat.`,
     date: '24 Feb 2026',
@@ -36,10 +36,12 @@ Selain silaturahmi, gathering juga dimanfaatkan untuk berbagi informasi perkemba
   },
   {
     id: 3,
-    slug: 'penyerahan-sertifikat-tahfiz',
-    title: 'Penyerahan Sertifikat Tahfiz',
-    excerpt: 'Acara penyerahan sertifikat hafalan kepada santri yang telah menyelesaikan target juz tertentu. Apresiasi atas kesungguhan menghafal.',
-    content: 'Acara penyerahan sertifikat hafalan kepada santri yang telah menyelesaikan target juz tertentu. Momen apresiasi atas kesungguhan dan ketekunan santri dalam menghafal Al-Qur\'an. Sertifikat diserahkan sebagai pengakuan formal atas pencapaian hafalan.',
+    slug: 'penyerahan-sertifikat-teknisi-komputer',
+    title: 'Penyerahan Sertifikat Teknisi Komputer',
+    excerpt: 'Acara penyerahan sertifikat kepada peserta yang telah menyelesaikan program pembelajaran teknisi komputer. Apresiasi atas kelulusan dan keterampilan yang diraih.',
+    content: `Penyerahan sertifikat Teknisi Komputer ini menjadi simbol apresiasi atas kesungguhan dan komitmen para siswa dalam mengikuti program pelatihan, mulai dari pengenalan perangkat keras (hardware), instalasi sistem operasi, perawatan komputer, hingga troubleshooting dasar.
+
+Program ini bertujuan membekali para santri dengan keterampilan teknis yang aplikatif, sehingga selain memiliki kekuatan spiritual, mereka juga memiliki kompetensi profesional yang siap diterapkan di dunia kerja maupun kewirausahaan di bidang teknologi.`,
     date: '5 Des 2024',
     image: '/penyerahan sertifikat.jpg',
     category: 'Acara',

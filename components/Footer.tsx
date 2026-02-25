@@ -18,8 +18,8 @@ export default function Footer() {
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 mb-20">
           <div className="lg:col-span-5">
             <img
-              src="https://placehold.co/140x40/ffffff/059669?text=PPA+Assaadah&font=roboto"
-              alt="PPA Assaadah"
+              src="/assaadah logo.png"
+              alt="PPA Baitul Qur'an As-Sa'adah"
               className="h-14 w-auto mb-8 opacity-90"
             />
             <p className="text-zinc-400 text-lg leading-relaxed mb-8 max-w-md">

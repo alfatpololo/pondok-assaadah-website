@@ -12,12 +12,13 @@ const fotos = [
   { id: 6, src: '/pelatihan.jpg', alt: 'Pelatihan', caption: 'Pelatihan pengembangan santri' },
   { id: 7, src: '/pemberdayaan.jpg', alt: 'Pemberdayaan', caption: 'Program pelatihan masyarakat' },
   { id: 8, src: '/penyerahan sertifikat.jpg', alt: 'Penyerahan sertifikat', caption: 'Penyerahan sertifikat tahfiz' },
+  { id: 9, src: '/WhatsApp Image 2026-02-25 at 12.26.58.jpeg', alt: 'PPA Assaadah', caption: 'Dokumentasi kegiatan' },
 ];
 
 const videos = [
-  { id: 1, youtubeId: 'Ks-_Mh1QhMc', alt: 'Video dokumentasi', caption: 'Wisuda Tahfiz 2024' },
-  { id: 2, youtubeId: 'MT-DGnZeqYk', alt: 'Video kegiatan', caption: 'Kegiatan santri' },
-  { id: 3, youtubeId: 'Ks-_Mh1QhMc', alt: 'Video profil', caption: 'Profil PPA Assaadah' },
+  { id: 1, youtubeId: 'imgc0p2mubc', alt: 'Video aktivitas', caption: 'Video aktivitas PPA Assa\'adah' },
+  { id: 2, youtubeId: 'imgc0p2mubc', alt: 'Video kegiatan', caption: 'Video kegiatan (dummy)' },
+  { id: 3, youtubeId: 'imgc0p2mubc', alt: 'Video dokumentasi', caption: 'Video dokumentasi (dummy)' },
 ];
 
 export default function Galeri() {
@@ -46,7 +47,7 @@ export default function Galeri() {
           </p>
         </div>
 
-        {/* Foto - di atas */}
+        {/* Foto - grid */}
         <div className="mb-20">
           <h3 className="font-display text-xl font-bold text-zinc-800 mb-6">Foto</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
@@ -75,7 +76,7 @@ export default function Galeri() {
 
         {/* Video YouTube - di bawah */}
         <div>
-          <h3 className="font-display text-xl font-bold text-zinc-800 mb-6">Video</h3>
+          <h3 className="font-display text-xl font-bold text-zinc-800 mb-6">Video kegiatan</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
             {videos.map((item) => (
               <button

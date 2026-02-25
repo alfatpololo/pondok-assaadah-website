@@ -239,7 +239,7 @@ export default function Programs() {
                   082298793370
                 </a>
                 <p className="text-sm text-zinc-500 mt-6 pt-6 border-t border-zinc-200">
-                  Santri mengikuti pendidikan formal di SDIT/SMPIT Yayasan Daarul Fikri Cibinong dengan membayar 30% dari SPP normal.
+                  Santri mengikuti pendidikan formal di SDIT/SMPIT Yayasan Daarul Fikri Cibinong.
                 </p>
               </div>
             </div>
