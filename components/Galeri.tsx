@@ -16,9 +16,9 @@ const fotos = [
 ];
 
 const videos = [
-  { id: 1, youtubeId: 'imgc0p2mubc', alt: 'Video aktivitas', caption: 'Video aktivitas PPA Assa\'adah' },
+  { id: 1, youtubeId: '3CY-iqHguFI', alt: 'Video kegiatan', caption: 'Video kegiatan PPA Assa\'adah' },
   { id: 2, youtubeId: 'FYnZIGrChV8', alt: 'Video dokumentasi', caption: 'Video dokumentasi PPA Assa\'adah' },
-  { id: 3, youtubeId: '3CY-iqHguFI', alt: 'Video kegiatan', caption: 'Video kegiatan PPA Assa\'adah' },
+  { id: 3, youtubeId: 'imgc0p2mubc', alt: 'Video aktivitas', caption: 'Video aktivitas PPA Assa\'adah' },
 ];
 
 export default function Galeri() {

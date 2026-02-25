@@ -7,7 +7,7 @@ const ITEMS_PER_PAGE = 3;
 export default function Testimonials() {
   const [pengurusCount, setPengurusCount] = useState(ITEMS_PER_PAGE);
   const testimonials = [
-    { name: 'Ibu Aminah Zahra', role: 'Wali Santri', image: 'https://i.pravatar.cc/400?img=1', text: 'Alhamdulillah, anak saya sudah hafal 15 juz dalam 2 tahun. Metode di Assa\'adah sangat efektif dan para ustadz sangat sabar.' },
+    { name: 'Ibu Aminah Zahra', role: 'Wali Santri', image: 'https://i.pravatar.cc/400?img=1', text: 'Alhamdulillah, anak saya sudah hafal 15 juz kurang dari 2 tahun. Metode di Assa\'adah sangat efektif dan para ustadz sangat sabar.' },
     { name: 'Bapak Hasan Basri', role: 'Wali Santri', image: 'https://i.pravatar.cc/400?img=2', text: 'Fasilitas pondok sangat memadai. Anak saya nyaman dan semangat menghafal. Jazakumullah khairan kepada pengurus.' },
     { name: 'Muhammad Faris', role: 'Alumni 30 Juz', image: 'https://i.pravatar.cc/400?img=3', text: 'Lulus dari Assa\'adah dengan hafalan 30 juz. Belajar disiplin, istiqomah, dan ikhlas. Sekarang melanjutkan ke universitas Islam.' },
     { name: 'Ibu Khadijah Rahman', role: 'Wali Santri', image: 'https://i.pravatar.cc/400?img=4', text: 'Program beasiswa sangat membantu. Anak saya bisa menghafal tanpa beban biaya. Semoga Allah membalas kebaikan donatur.' },
@@ -22,7 +22,7 @@ export default function Testimonials() {
   const pengurus = [
     { name: 'Muhammad Hilmi Firdausi', position: 'Ketua', image: '/Hilmi.jpg' },
     { name: 'Zulfikar', position: 'Sekretaris', image: '/zulfikar.jpeg' },
-    { name: 'Abdul Latif Ahmad', position: 'Wakil Sekretaris / Mudir PPA', image: 'https://ui-avatars.com/api/?name=Abdul+Latif&size=360&background=059669&color=fff' },
+    { name: 'Abdul Latif Ahmad', position: 'Wakil Sekretaris / Mudir PPA', image: '/abdul.jpg' },
     { name: 'Solihin', position: 'Bendahara', image: '/solihin.jpeg', imagePosition: '50% 35%' },
     { name: 'Lili Abidin', position: 'Wakil Bendahara I', image: 'https://ui-avatars.com/api/?name=Lili+Abidin&size=360&background=059669&color=fff' },
     { name: 'Eti Handayani', position: 'Wakil Bendahara II', image: 'https://ui-avatars.com/api/?name=Eti+Handayani&size=360&background=059669&color=fff' },
