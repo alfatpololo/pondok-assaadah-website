@@ -11,10 +11,26 @@ export default function About() {
     { gradient: 'from-violet-500 to-violet-600', border: 'hover:border-violet-200', shadow: 'hover:shadow-violet-100/50' },
   ];
   const values = [
-    { icon: 'ri-star-line', title: 'Tauhid', desc: 'Mengesakan Allah dalam setiap aspek kehidupan' },
-    { icon: 'ri-heart-line', title: 'Akhlak', desc: 'Berakhlak mulia seperti Rasulullah SAW' },
-    { icon: 'ri-time-line', title: 'Disiplin', desc: 'Konsisten dalam menghafal dan beribadah' },
-    { icon: 'ri-hand-heart-line', title: 'Keikhlasan', desc: 'Mengharap ridha Allah semata' },
+    {
+      icon: 'ri-star-line',
+      title: 'Tauhid',
+      desc: 'Meneguhkan keesaan Allah SWT sebagai landasan utama dalam berpikir, bersikap, dan bertindak. Tauhid menjadi fondasi seluruh proses pendidikan, membentuk pribadi yang lurus aqidahnya, kokoh keyakinannya, dan menjadikan setiap aktivitas sebagai bentuk ibadah kepada Allah SWT.',
+    },
+    {
+      icon: 'ri-heart-line',
+      title: 'Akhlak',
+      desc: 'Meneladani akhlak Rasulullah SAW sebagai standar perilaku dan karakter. Santri dibina untuk memiliki kelembutan hati, kejujuran, tanggung jawab, adab terhadap guru dan orang tua, serta kepedulian sosial yang tinggi sebagai cerminan nilai Islam yang rahmatan lil \'alamin.',
+    },
+    {
+      icon: 'ri-time-line',
+      title: 'Disiplin',
+      desc: 'Membangun konsistensi dalam menghafal Al-Qur\'an, beribadah, dan menjalani amanah keseharian. Disiplin bukan sekadar kepatuhan pada aturan, tetapi pembentukan karakter tangguh yang teratur, fokus, dan bertanggung jawab dalam mencapai target hafalan dan prestasi.',
+    },
+    {
+      icon: 'ri-hand-heart-line',
+      title: 'Keikhlasan',
+      desc: 'Menanamkan niat yang lurus dalam setiap amal, semata-mata mengharap ridha Allah SWT. Keikhlasan menjadi ruh perjuangan, menjaga hati dari riya dan pamrih, serta menumbuhkan ketenangan dan keberkahan dalam setiap proses pendidikan.',
+    },
   ];
 
   return (
@@ -89,7 +105,7 @@ export default function About() {
                 </div>
                 <h4 className="font-display text-2xl font-bold text-amber-900 mb-4">Visi</h4>
                 <p className="text-amber-900/85 text-lg leading-relaxed">
-                  Menjadi lembaga tahfidz terdepan yang mencetak generasi Qur&apos;ani yang hafal, faham, dan mengamalkan Al-Qur&apos;an dalam kehidupan sehari-hari.
+                  Menjadi lembaga tahfizh Al-Qur&apos;an yang amanah dan berkelanjutan dalam membina generasi yatim dan dhuafa yang berakhlak mulia, mandiri, dan berdaya saing.
                 </p>
               </div>
             </div>
@@ -104,7 +120,11 @@ export default function About() {
                 </div>
                 <h4 className="font-display text-2xl font-bold text-blue-50 mb-6">Misi</h4>
                 <ul className="space-y-4">
-                  {['Menghafal Al-Qur\'an 30 juz dengan tartil', 'Membentuk akhlak mulia sesuai tuntunan Islam', 'Mengembangkan potensi santri secara holistik'].map((item, i) => (
+                  {[
+                    'Menyelenggarakan pendidikan tahfizh yang terstruktur, berkualitas, dan berorientasi pada pembentukan SDM unggul.',
+                    'Membina akhlak, kedisiplinan, dan karakter Islami sebagai fondasi kepemimpinan masa depan.',
+                    'Mengintegrasikan pendidikan agama dan formal guna mencetak generasi yang cerdas, produktif, dan berkontribusi bagi kemajuan bangsa.',
+                  ].map((item, i) => (
                     <li key={i} className="flex items-start gap-4 text-blue-100/90">
                       <i className="ri-check-line text-blue-300 text-xl flex-shrink-0 mt-0.5" />
                       <span className="text-lg">{item}</span>
@@ -118,12 +138,12 @@ export default function About() {
           {/* Stats */}
           <StatsCounter />
 
-          {/* Values - horizontal cards */}
+          {/* Nilai-Nilai Dasar */}
           <div className="mt-24 lg:mt-32">
             <div className="text-center mb-16">
-              <span className="text-emerald-600 font-bold text-xs uppercase tracking-[0.25em]">Nilai Utama</span>
+              <span className="text-emerald-600 font-bold text-xs uppercase tracking-[0.25em]">Nilai-Nilai Dasar</span>
               <h3 className="font-display text-3xl lg:text-4xl font-bold text-zinc-900 mt-4">
-                Prinsip yang mendasari setiap kegiatan
+                PPA Baitul Qur&apos;an As-Sa&apos;adah
               </h3>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -138,7 +158,7 @@ export default function About() {
                       <i className={`${item.icon} text-white text-2xl`} />
                     </div>
                     <h4 className="font-display text-xl font-bold text-zinc-900 mb-3">{item.title}</h4>
-                    <p className="text-zinc-600 leading-relaxed">{item.desc}</p>
+                    <p className="text-zinc-600 leading-relaxed text-sm">{item.desc}</p>
                   </div>
                 );
               })}
