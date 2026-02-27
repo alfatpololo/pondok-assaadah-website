@@ -37,7 +37,7 @@ export default function Donation() {
             </blockquote>
             <div className="mt-12">
               <a
-                href="https://wa.me/6282298793370"
+                href="https://wa.me/6281287531710"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white text-emerald-800 font-bold hover:bg-emerald-50 transition-all duration-300 shadow-xl"
@@ -68,7 +68,9 @@ export default function Donation() {
               </div>
 
               <p className="text-zinc-600 mb-2">
-                Konfirmasi donasi via WhatsApp: <a href="https://wa.me/6282298793370" target="_blank" rel="noopener noreferrer" className="font-bold text-emerald-600 hover:text-emerald-700">082298793370</a>
+                Konfirmasi donasi via WhatsApp: <a href="https://wa.me/6281287531710" target="_blank" rel="noopener noreferrer" className="font-bold text-emerald-600 hover:text-emerald-700">081287531710</a>
+                {' — '}
+                <a href="https://wa.me/6282228793370" target="_blank" rel="noopener noreferrer" className="font-bold text-emerald-600 hover:text-emerald-700">082228793370</a>
               </p>
               <p className="text-zinc-500 text-sm">
                 Apabila ingin mengasuh santri sebagai anak asuh, kami dengan senang hati memberi kesempatan. Semoga menjadi investasi di akhirat kelak.

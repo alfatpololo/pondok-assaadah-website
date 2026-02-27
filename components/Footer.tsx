@@ -22,9 +22,13 @@ export default function Footer() {
               alt="PPA Baitul Qur'an As-Sa'adah"
               className="h-14 w-auto mb-8 opacity-90"
             />
-            <p className="text-zinc-400 text-lg leading-relaxed mb-8 max-w-md">
-              Mencetak generasi penghafal Al-Qur&apos;an yang berakhlak mulia dan bermanfaat bagi umat.
+            <p className="text-zinc-400 text-lg leading-relaxed mb-4 max-w-md">
+              Menebar Cahaya Qur&apos;ani Sejak 2009.
             </p>
+            <ul className="text-zinc-500 text-sm space-y-1 mb-8">
+              <li>SK NOTARIS :</li>
+              <li>SK KUMHAM :</li>
+            </ul>
             <div className="flex gap-3">
               {[
                 { icon: 'ri-facebook-fill', hover: 'hover:bg-emerald-500/20 hover:text-emerald-400' },
@@ -76,11 +80,17 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-4">
                 <i className="ri-phone-line text-emerald-400/80 text-xl flex-shrink-0" />
-                <a href="tel:082298793370" className="hover:text-emerald-400 transition-colors">082298793370</a>
+                <span className="flex flex-col gap-0.5">
+                  <a href="tel:081287531710" className="hover:text-emerald-400 transition-colors">081287531710</a>
+                  <a href="tel:082228793370" className="hover:text-emerald-400 transition-colors">082228793370</a>
+                </span>
               </li>
               <li className="flex items-center gap-4">
                 <i className="ri-whatsapp-line text-emerald-400/80 text-xl flex-shrink-0" />
-                <a href="https://wa.me/6282298793370" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">082298793370</a>
+                <span className="flex flex-col gap-0.5">
+                  <a href="https://wa.me/6281287531710" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">081287531710</a>
+                  <a href="https://wa.me/6282228793370" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">082228793370</a>
+                </span>
               </li>
             </ul>
             <div className="mt-10 p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">

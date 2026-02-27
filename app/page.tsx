@@ -7,6 +7,7 @@ import Programs from '@/components/Programs';
 import Berita from '@/components/Berita';
 import Galeri from '@/components/Galeri';
 import Donation from '@/components/Donation';
+import KataSambutan from '@/components/KataSambutan';
 import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <KataSambutan />
       <Programs />
       <Berita />
       <Galeri />

@@ -56,7 +56,7 @@ export default function About() {
                 PPA Baitul Qur&apos;an As-Sa&apos;adah
               </h2>
               <p className="text-zinc-300 text-xl lg:text-2xl mt-6 max-w-2xl leading-relaxed">
-                Pondok Penghafal Al-Qur&apos;an di Mutiara Sentul — memberkahi lingkungan sejak 2009
+                Menebar Cahaya Qur&apos;ani Sejak 2009.
               </p>
             </div>
             <div className="hidden lg:flex items-center gap-4 text-white/60">

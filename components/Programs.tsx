@@ -231,13 +231,16 @@ export default function Programs() {
                 <p className="text-zinc-600 mb-6">
                   Jl. Alternatif Sentul 88, Perum Mutiara Sentul Blok M-5, Cibinong Bogor 16917
                 </p>
-                <a
-                  href="tel:082298793370"
-                  className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors"
-                >
-                  <i className="ri-phone-line text-xl" />
-                  082298793370
-                </a>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:081287531710" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
+                    <i className="ri-phone-line text-xl" />
+                    081287531710
+                  </a>
+                  <a href="tel:082228793370" className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
+                    <i className="ri-phone-line text-xl" />
+                    082228793370
+                  </a>
+                </div>
                 <p className="text-sm text-zinc-500 mt-6 pt-6 border-t border-zinc-200">
                   Santri mengikuti pendidikan formal di SDIT/SMPIT Yayasan Daarul Fikri Cibinong.
                 </p>

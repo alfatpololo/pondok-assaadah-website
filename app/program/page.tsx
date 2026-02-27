@@ -260,7 +260,7 @@ export default function ProgramPage() {
             <p className="text-zinc-600 mb-6 text-lg">Ingin mendaftarkan putra/putri Anda?</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/6282298793370"
+                href="https://wa.me/6281287531710"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/40 hover:-translate-y-0.5 transition-all"
